@@ -7,10 +7,9 @@ Background:
 		function(s){
 			var text = "";
 			var pattern = "ABCDEFGHIJKLMNOPQRSTVWXYZabcdefghijklmnopqrstuvwxyz";
-			for(var i=0; i<s; i++){
+			for(var i=0; i<s; i++)
 				text += pattern.charAt(Math.floor(Math.random() * pattern.length()));
 				return text;
-				}
 }
 """
 * def randomString = random_String(10)
