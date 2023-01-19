@@ -14,7 +14,7 @@ Background:
 }
 """
 * def randomString = random_String(10)
-* def requestInput = read('classpath:src/test/resources/usersdata/user.json')
+* def requestInput = read('classpath:src/test/resources/payload/user.json')
 
 * set requestInput.email = randomString + "@gmail.com"
 
