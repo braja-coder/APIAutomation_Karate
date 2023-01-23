@@ -1,4 +1,5 @@
-Feature: Create user using post api
+@apiautomation
+Feature: Delete user using put api
 
 Background: 
 * url baseUrl
@@ -14,17 +15,37 @@ Background:
 }
 """
 * def randomString = random_String(10)
-* def requestInput = read('classpath:src/test/resources/payload/user.json')
+* def requestInput = read("classpath:data/user.json")
 
 * set requestInput.email = randomString + "@gmail.com"
 
 # can assert like these ways 
-Scenario: Craete a user with given data
+# Create user
+Scenario: Delete a user with given data
 Given path '/public/v1/users'
 And request requestInput
 And header Authorization = 'Bearer ' + tokenId
 When method post
 Then status 201
 * match response.data.id == '#present'  				 				
-* match $.data.name == 'Sundar Dash'   				
-And match $.data.email == requestInput.email 					
+		
+# delte user
+* def userId = $.data.id
+Given path '/public/v1/users/' + userId
+And request requestInput
+And header Authorization = 'Bearer ' + tokenId
+When method delete
+Then status 204
+
+# fetch the same user
+Given url baseUrl+'/public/v1/users'
+And path userId
+When method GET
+Then status 404
+And match $.data.message == 'Resource not found'
+	
+
+
+
+
+

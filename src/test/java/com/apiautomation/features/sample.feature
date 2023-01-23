@@ -1,3 +1,4 @@
+@apiautomation
 Feature: Print Hello World
 
 Scenario: Hello World scenario

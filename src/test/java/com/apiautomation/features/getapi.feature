@@ -1,3 +1,4 @@
+@apiautomation
 Feature: get api feature
 
 Scenario: get user details

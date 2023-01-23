@@ -1,3 +1,4 @@
+@apiautomation
 Feature: get api feature with query parameters
 
 Scenario: get all user details with given query

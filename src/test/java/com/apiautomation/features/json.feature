@@ -1,3 +1,4 @@
+@apiautomation
 Feature: Json feature testing
 
 Scenario: Json parser (Reader)

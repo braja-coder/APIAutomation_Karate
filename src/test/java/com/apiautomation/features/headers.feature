@@ -1,3 +1,4 @@
+@apiautomation
 Feature: get api headers feature
 
 Scenario: pass the users request with headers part1

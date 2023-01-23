@@ -1,3 +1,4 @@
+@apiautomation
 Feature: Create user using post api
 
 Background: 
